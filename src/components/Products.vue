@@ -119,7 +119,7 @@ export default {
   background-position: top center, top center;
   background-size: 100vw, cover;
   padding-top: 237px;
-  padding-bottom: 120px;
+  padding-bottom: 170px;
 }
 
 .info {
