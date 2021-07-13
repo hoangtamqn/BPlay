@@ -51,6 +51,7 @@ export default {};
     background-size: cover;
     margin-top: -100px;
     padding-top: 28vw;
+    width: 100vw;
 }
 
 #contact-us {

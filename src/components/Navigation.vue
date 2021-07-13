@@ -1,9 +1,9 @@
 <template>
   <div>
-    <div v-if="!mobile">
+    <div class="pc">
       <DesktopNav :menus="menus" @clickMenu="clickMenu($event)"/>
     </div>
-    <div v-else>
+    <div class="sp">
       <MobileNav :menus="menus" @clickMenu="clickMenu($event)"/>
     </div>
   </div>
@@ -33,9 +33,14 @@ export default {
       ]
     };
   },
-  created() {
+  mounted() {
+    this.mobile = this.isMobile();
     window.addEventListener("resize", this.checkScreen);
     this.checkScreen();
+    console.log("ddd", this.mobile);
+  },
+  computed: {
+    // mobile
   },
   methods: {
     clickMenu(event) {
@@ -55,16 +60,24 @@ export default {
     },
     checkScreen() {
       this.windowWidth = window.innerWidth;
+      console.log(this.windowWidth);
       if (this.windowWidth <= 1080) {
         this.mobile = true;
         return;
       }
       this.mobile = false;
+      console.log(this.mobile);
       return;
     },
+    isMobile() {
+      if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        return true
+      } else {
+        return false
+      }
+    }
   }
 };
 </script>
-
 <style scoped>
 </style>

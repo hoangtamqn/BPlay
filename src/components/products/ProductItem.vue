@@ -61,7 +61,7 @@ export default {
 
 @media only screen and (max-width: 768px) {
   .product-card img {
-    width: 350px;
+    width: 60vw;
   }
 }
 </style>

@@ -81,7 +81,7 @@ export default {
 
 <style scoped>
 header {
-  width: 100%;
+  width: 100vw;
   position: fixed;
   z-index: 99;
   color: #ffffff;
@@ -101,7 +101,7 @@ nav .right-menu {
 }
 
 nav .icon-mobile {
-  margin-left: 50px;
+  margin-left: min(50px, 3vw);
   animation: fadeToLeft 800ms forwards;
   opacity: 0;
 }

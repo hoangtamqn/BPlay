@@ -58,7 +58,7 @@ export default {
 
 <style scoped>
 header {
-  width: 100%;
+  width: 100vw;
   position: fixed;
   z-index: 99;
   color: #ffffff;

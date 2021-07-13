@@ -10,20 +10,21 @@
           <p>BPlay’s high quality iGaming Platform offers a complete solution for your casino. Get the full White Label turnkey solution or the Seamless API with our comprehensive selection of games. Through our global network of premium partners such as Vivo Gaming, SBTech and HoGaming you will have access to the best Live Casino, Sportsbook, Slots, Table Games, Number Games and Fishing Games on the market.</p>
         </div>
       </div>
-      <div v-if="mobile">
+      <div class="sp">
         <carousel :settings="settings">
           <slide v-for="product in products" :key="product.id">
             <ProductItem :product="product"/>
           </slide>
 
           <template #addons>
-            <!-- <navigation /> -->
             <pagination />
           </template>
         </carousel>
       </div>
-      <div v-else class="list-product">
-        <ProductItem v-for="product in products" :key="product.id" :product="product"/>
+      <div class="pc">
+        <div class="list-product">
+          <ProductItem v-for="product in products" :key="product.id" :product="product"/>
+        </div>
       </div>
     </div>
   </section>
@@ -106,36 +107,7 @@ export default {
         itemsToShow: 1.3,
         snapAlign: 'left',
       },
-};
-  },
-  mounted() {
-    window.addEventListener("resize", this.checkScreen);
-    this.checkScreen();
-  },
-  methods: {
-    checkScreen() {
-      this.windowWidth = window.innerWidth;
-      if (this.windowWidth <= 650) {
-        this.mobile = true;
-        return;
-      }
-      this.mobile = false;
-      return;
-    },
-    next() {
-        this.$refs.slick.next();
-    },
-
-    prev() {
-        this.$refs.slick.prev();
-    },
-
-    reInit() {
-        // Helpful if you have to deal with v-for to update dynamic lists
-        this.$nextTick(() => {
-            this.$refs.slick.reSlick();
-        });
-    },
+    };
   }
 };
 </script>
