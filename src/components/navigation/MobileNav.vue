@@ -107,7 +107,9 @@ nav .icon-mobile {
 }
 
 .mobile-nav-bg {
-    background: var(--dark-color-4);
+  background: var(--dark-color-4);
+  overflow-y: scroll;
+  height: 100vh;
 }
 
 .navigation, .navigation-nav {

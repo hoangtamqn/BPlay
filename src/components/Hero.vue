@@ -71,7 +71,6 @@ export default {
   top: 0px;
   z-index: 0;
   width: 100%;
-  min-width: 600px;
 }
 
 .hero-container .hero-wrapper {
