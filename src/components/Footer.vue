@@ -41,14 +41,26 @@
 </template>
 
 <script>
-import { saveAs } from "file-saver-ios-bugfix";
 export default {
   methods: {
     saveFile() {
-      saveAs(
+      downloadItem(
         "https://dev05.px123.info/qrcode/xyz/dt/img/d6a0598bea87af9bb82da85fc99df4a6.png",
         "QR-code.png"
       );
+    },
+    downloadItem({ url, label }) {
+      this.$axios
+        .get(url, { responseType: "blob" })
+        .then(response => {
+          let reader = new FileReader();
+          const out = new Blob([response]);
+          reader.onload = function(e) {
+            window.location.href = reader.result;
+          };
+          reader.readAsDataURL(out);
+        })
+        .catch(console.error);
     }
   }
 };
