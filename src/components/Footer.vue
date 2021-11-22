@@ -41,7 +41,7 @@
 </template>
 
 <script>
-import { saveAs } from "file-saver";
+import { saveAs } from "file-saver-ios-bugfix";
 export default {
   methods: {
     saveFile() {
