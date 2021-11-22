@@ -30,6 +30,7 @@
         </div>
         <hr class="sp footer-line" />
         <p>Copyright © 2020 bplay.com. All rights reserved.</p>
+        <button @click="saveFile">Save File</button>
       </div>
     </div>
     <div id="btnTop" class="btn-top onhover">
@@ -40,7 +41,17 @@
 </template>
 
 <script>
-export default {};
+import { saveAs } from "file-saver";
+export default {
+  methods: {
+    saveFile() {
+      saveAs(
+        "https://dev05.px123.info/qrcode/xyz/dt/img/d6a0598bea87af9bb82da85fc99df4a6.png",
+        "QR-code.png"
+      );
+    }
+  }
+};
 </script>
 
 <style scoped>
